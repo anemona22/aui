@@ -1,5 +1,5 @@
 {
-  "name": "@aui/core",
+  "name": "@ideoui/core",
   "version": "0.0.1-alpha",
   "description": "AUI core plugin for tailwind",
   "main": "index.js",
