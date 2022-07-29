@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "githubIssues.createIssueTriggers": [
+    "TODO",
+    "todo",
+    "BUG",
+    "FIXME",
+    "ISSUE",
+    "HACK"
+  ]
+}
