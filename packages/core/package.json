@@ -1,13 +1,13 @@
 {
   "name": "@ideoui/core",
   "version": "0.0.1-alpha",
-  "description": "AUI core plugin for tailwind",
+  "description": "Ideoui core plugin for tailwind",
   "main": "src/index.js",
   "author": "Ideoui",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anemona22/aui.git"
+    "url": "git+https://github.com/ideoui/ideoui.git"
   },
   "bugs": {
     "url": "https://github.com/ideoui/ideoui/issues"
