@@ -1,6 +1,6 @@
 {
   "name": "@ideoui/core",
-  "version": "0.0.1-alpha",
+  "version": "0.1.0-alpha",
   "description": "Ideoui core plugin for tailwind",
   "main": "src/index.js",
   "author": "Ideoui",
