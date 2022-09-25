@@ -1,0 +1,28 @@
+{
+  "name": "@ideoui/colors",
+  "version": "0.1.0-alpha",
+  "description": "Ideoui colors",
+  "author": "Ideoui",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "concurrently yarn:build:*",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "lint": "concurrently yarn:lint:*",
+    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
+    "lint:types": "tsc --noEmit"
+  }
+}
