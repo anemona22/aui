@@ -1,45 +1,101 @@
-import plugin from 'tailwindcss/plugin'
+const plugin = require("tailwindcss/plugin");
+const _merge = require("lodash/merge");
+const variablesApi = require("@mertasan/tailwindcss-variables/api");
 
-import colors from './colors'
+const delightVariables = require("./variables");
+const colors = require("./colors");
 
-const core = plugin.withOptions(
-  function(options = {}) {
-    return function({
+// Base
+// const Base = require("./base");
+
+// Components
+const Chip = require("./components/chip");
+const components = [Chip];
+
+const defaultColors = [
+  "primary",
+  "secondary",
+  "success",
+  "danger",
+  "warning",
+  "info",
+];
+
+module.exports = plugin.withOptions(
+  function (options = { colors: [], cssBase: true }) {
+    return function ({
       addComponents,
       addVariant,
       addBase,
       variants,
       e,
       theme,
-      addUtilities
-    }) {},
-    function() {
-      return {
-        prefix: 'aui-',
-        theme: {
-          colors: {
-            'black': '#000000',
-            'white': '#ffffff',
-            'blue': colors.blue,
-            'indigo': colors.indigo,
-            'violet': colors.violet,
-            'purple': colors.purple,
-            'magenta': colors.magenta,
-            'red': colors.red,
-            'pink': colors.pink,
-            'orange': colors.orange,
-            'reddish-orange': colors.reddishOrange,
-            'amber': colors.amber,
-            'yellow': colors.yellow,
-            'green': colors.green,
-            'lime': colors.lime,
-            'teal': colors.teal,
-            'brown': colors.brown,
-            'slate': colors.slate,
-            'gray': colors.gray,
-          }
+      config,
+      addUtilities,
+    }) {
+      const optionColors = [...defaultColors, ...(options.colors || [])];
+      const pluginOptions = {
+        variablePrefix: "--delight",
+        // darkSelector: null, // default: .dark
+        // darkToRoot: false, // default: true ( :root.dark or .dark )
+      };
+      const allVariables = delightVariables(theme);
+
+      // active({ addVariant, variants, e, theme, addUtilities });
+      // selected({ addVariant, variants, e, theme, addUtilities });
+      // disabled({ addVariant, variants, e, theme, addUtilities });
+
+      // addBase(Base);
+
+      addComponents(
+        variablesApi.variables(
+          _merge(allVariables.variables, theme("variables", {})),
+          pluginOptions
+        )
+      );
+
+      addComponents(
+        variablesApi.darkVariables(
+          _merge(allVariables.darkVariables, theme("darkVariables", {})),
+          pluginOptions,
+          config("darkMode")
+        )
+      );
+
+      addComponents(
+        components.map((component) => component(optionColors)),
+        {
+          respoectPrefix: false,
         }
-      }
-    }
+      );
+
+      //   if (options.cssBase) {
+      //     addBase({
+      //       html: {
+      //         "@apply text-foreground antialiased border-secondary-200 dark:border-secondary-700 bg-base":
+      //           {},
+      //         lineHeight: "1.5",
+      //         textRendering: "optimizeLegibility",
+      //         textSizeAdjust: "100%",
+      //         touchAction: "manipulation",
+      //       },
+      //       body: {
+      //         position: "relative",
+      //         minHeight: "100%",
+      //         fontFeatureSettings: "'kern'",
+      //       },
+      //     });
+      //   }
+      // };
+    };
+  },
+  function () {
+    return {
+      theme: {
+        extend: {
+          colors,
+        },
+      },
+    };
   }
-)
+);

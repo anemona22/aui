@@ -1,4 +1,4 @@
-const { blue, gray, green, red, amber, indigo } = require("@ideoui/colors");
+const { blue, gray, green, red, amber, indigo } = require("../../colors");
 
 module.exports = {
   primary: { ...blue },

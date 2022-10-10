@@ -4,12 +4,10 @@
   "private": true,
   "author": "Ideoui",
   "license": "MIT",
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "docs"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "docs"
+  ],
   "directories": {
     "docs": "docs"
   },
@@ -21,7 +19,9 @@
     "url": "https://github.com/ideoui/ideoui/issues"
   },
   "scripts": {
-    "build": "lerna run build --no-private --stream"
+    "build": "lerna run build --no-private --stream",
+    "docs:dev": "yarn workspace @ideoui/docs dev",
+    "docs:start": "lerna run start --scope=docs"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
@@ -35,8 +35,9 @@
     "concurrently": "^7.4.0",
     "cross-env": "^7.0.3",
     "jest": "^29.0.3",
-    "lerna": "^5.5.2",
     "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.1.8",
