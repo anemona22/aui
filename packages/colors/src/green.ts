@@ -1,16 +1,16 @@
-import { ColorHues } from './types'
+import { ColorHues } from "./types";
 
 const green: ColorHues = {
-  '50': '#f8fff5',
-  '100': '#ecffe6',
-  '200': '#c7feb3',
-  '300': '#a2fd81',
-  '400': '#7dfd4f',
-  '500': '#45fc03',
-  '600': '#3ee303',
-  '700': '#30b002',
-  '800': '#237e02',
-  '900': '#154c01'
-}
+  "50": "#EBFFEB",
+  "100": "#D6FFD6",
+  "200": "#5CFF5C",
+  "300": "#1FFF1F",
+  "400": "#00B800",
+  "500": "#007A00",
+  "600": "#006600",
+  "700": "#005200",
+  "800": "#003D00",
+  "900": "#002900",
+};
 
-export default green
+export default green;
