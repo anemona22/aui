@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","names":[],"sources":["../../src/types.ts"],"sourcesContent":["export interface ColorHues {\r\n  50: string;\r\n  100: string;\r\n  200: string;\r\n  300: string;\r\n  400: string;\r\n  500: string;\r\n  600: string;\r\n  700: string;\r\n  800: string;\r\n  900: string;\r\n}"],"mappings":""}
