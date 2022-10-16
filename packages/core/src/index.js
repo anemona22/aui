@@ -2,8 +2,9 @@ const plugin = require("tailwindcss/plugin");
 const _merge = require("lodash/merge");
 const variablesApi = require("@mertasan/tailwindcss-variables/api");
 
+const config = require("./config");
+const reboot = require("./reboot");
 const delightVariables = require("./variables");
-const colors = require("./colors");
 
 // Base
 // const Base = require("./base");
@@ -40,12 +41,12 @@ module.exports = plugin.withOptions(
         // darkToRoot: false, // default: true ( :root.dark or .dark )
       };
       const allVariables = delightVariables(theme);
-
+      const base = reboot(theme);
       // active({ addVariant, variants, e, theme, addUtilities });
       // selected({ addVariant, variants, e, theme, addUtilities });
       // disabled({ addVariant, variants, e, theme, addUtilities });
 
-      // addBase(Base);
+      addBase(base);
 
       addComponents(
         variablesApi.variables(
@@ -89,13 +90,8 @@ module.exports = plugin.withOptions(
       // };
     };
   },
-  function () {
-    return {
-      theme: {
-        extend: {
-          colors,
-        },
-      },
-    };
-  }
+  () => config
+  // function () {
+  //   return config;
+  // }
 );
