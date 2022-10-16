@@ -19,8 +19,8 @@
     "url": "https://github.com/ideoui/ideoui/issues"
   },
   "scripts": {
-    "build": "lerna run build --no-private --stream",
-    "docs:dev": "yarn workspace @ideoui/docs dev",
+    "build": "pnpm --stream -r build",
+    "docs:dev": "pnpm --filter @ideoui/docs dev",
     "docs:start": "lerna run start --scope=docs"
   },
   "devDependencies": {
