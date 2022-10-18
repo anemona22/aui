@@ -1,5 +1,5 @@
 {
-  "name": "@ideoui/core",
+  "name": "@delightui/core",
   "version": "0.1.0-alpha",
   "description": "Ideoui core plugin for tailwind",
   "main": "src/index.js",
@@ -16,7 +16,8 @@
     "tailwindcss": ">=2.1.0"
   },
   "devDependencies": {
-    "@ideoui/colors": "workspace:^",
+    "@delightui/variables": "workspace:^",
+    "@delightui/reboot": "workspace:^",
     "@mertasan/tailwindcss-variables": "^2.5.1",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
