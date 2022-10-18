@@ -3,8 +3,8 @@ const _merge = require("lodash/merge");
 const variablesApi = require("@mertasan/tailwindcss-variables/api");
 
 const config = require("./config");
-const reboot = require("./reboot");
-const delightVariables = require("./variables");
+const reboot = require("@delightui/reboot");
+const delightVariables = require("@delightui/variables");
 
 // Base
 // const Base = require("./base");
@@ -91,7 +91,4 @@ module.exports = plugin.withOptions(
     };
   },
   () => config
-  // function () {
-  //   return config;
-  // }
 );
