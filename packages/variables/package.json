@@ -1,0 +1,26 @@
+{
+  "name": "@delightui/variables",
+  "version": "0.1.0-alpha",
+  "description": "Delight UI core variables",
+  "homepage": "https://github.com/delightui/delightui#readme",
+  "author": "Delight UI authors",
+  "license": "MIT",
+  "main": "src/index.js",
+  "keywords": [
+    "Delight UI",
+    "Delight"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delightui/delightui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/delightui/delightui/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@delightui/colors": "workspace:^"
+  }
+}
